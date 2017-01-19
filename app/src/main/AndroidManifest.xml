@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="woah.gigigo.com.testbranch">
+
+  <uses-permission android:name="android.permission.INTERNET"/>  <!--branch3-->
+  <!--branch7 no olvidar poner android:name=".App" ;)-->
+  <application
+      android:name=".App"
+      android:allowBackup="true"
+      android:icon="@mipmap/ic_launcher"
+      android:label="@string/app_name"
+      android:supportsRtl="true"
+      android:theme="@style/AppTheme">
+    <activity android:name="woah.gigigo.com.testbranch.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+
+        <!--branch5 ini-->
+        <data
+            android:host="ocm"
+            android:scheme="woah"/>
+        <data
+            android:host="section/"
+            android:scheme="woah"/>
+        <action android:name="android.intent.action.VIEW"/>
+
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <!--branch5 fin-->
+
+      </intent-filter>
+    </activity>
+
+
+    <!--branch2-->
+    <meta-data
+        android:name="io.branch.sdk.BranchKey"
+        android:value="key_live_kmCd9A3CVusV4o9VMOwyvfnfBFanYyyR"/>
+    <!--branch4-->
+    <!--Google Play Install Referrer-->
+    <receiver
+        android:name="io.branch.referral.InstallListener"
+        android:exported="true">
+      <intent-filter>
+        <action android:name="com.android.vending.INSTALL_REFERRER"/>
+      </intent-filter>
+    </receiver>
+  </application>
+
+</manifest>
