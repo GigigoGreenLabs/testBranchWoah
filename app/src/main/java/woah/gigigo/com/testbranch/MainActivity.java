@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     branch.initSession(new Branch.BranchReferralInitListener() {
       @Override public void onInitFinished(JSONObject referringParams, BranchError error) {
+        //los referringparams es esto: https://dev.branch.io/getting-started/configuring-links/
         if (error == null) {
           // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
           // params will be empty if no data found
